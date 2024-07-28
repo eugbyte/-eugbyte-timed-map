@@ -41,7 +41,7 @@ export interface TimedMap<K, V> extends Map<K, V> {
     callback: () => void | Promise<void>
   ): void;
   /**
-   * Remember to call `dispose()` before unmounting the component, to clear all interval / timeouts.
+   * Remember to call `dispose()` after use to clear all interval / timeouts.
    */
   dispose(): void;
 
