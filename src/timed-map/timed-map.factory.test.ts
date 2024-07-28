@@ -3,7 +3,7 @@ import { timedMapFactory, Strategy } from "./timed-map.factory";
 import type { TimedMap } from "./timed-map.types";
 
 describe("test mapFactory", () => {
-  it.only("strategy ticker should be created", async () => {
+  it("strategy ticker should be created", async () => {
     const cache: TimedMap<string, number> = timedMapFactory(Strategy.TICKER);
     expect(cache).toBeTruthy();
 
