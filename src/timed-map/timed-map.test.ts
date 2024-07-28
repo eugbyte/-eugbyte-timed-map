@@ -8,8 +8,8 @@ function sleep(ms: number): Promise<unknown> {
 }
 
 describe("Test TimedMap", () => {
-  const tickerMap: TimedMap<string, number> = new TickerMap();
-  const timeoutMap: TimedMap<string, number> = new TimeoutMap();
+  const tickerMap = new TickerMap<string, number>();
+  const timeoutMap = new TimeoutMap<string, number>();
 
   afterAll(() => {
     tickerMap.dispose();
@@ -19,10 +19,6 @@ describe("Test TimedMap", () => {
   describe.each([tickerMap, timeoutMap])(
     "should be created",
     (cache: TimedMap<string, number>) => {
-      it("should be created", () => {
-        expect(cache).toBeTruthy();
-      });
-
       it("item should be accessible", () => {
         cache.set("one", 1);
         const value: number | undefined = cache.get("one");

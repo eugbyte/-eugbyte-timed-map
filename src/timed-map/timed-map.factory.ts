@@ -2,17 +2,20 @@ import { TickerMap } from "./ticker-map";
 import { TimeoutMap } from "./timeout-map";
 import { TimedMap } from "./timed-map.types";
 
+export type Abc = 1;
+
 export enum Strategy {
   /**
-   * Alternative strategy that uses setInterval under the hood.
    * Cache is expected to be used perpetually, e.g. in a backend server, https://stackoverflow.com/a/53127712/6514532.
+   * Uses setInterval under the hood.
    */
-  TIMEOUTS = 0,
+  TICKER = 0,
   /**
    * Cache is expected to not be used perpetually, e.g. in a browser tab.
-   * This is because it is possible for
+   * Uses setTimeout under the hood to create multiple timeoputs.
+   * It is possible to [run out of timeout ids](https://stackoverflow.com/questions/53102524/does-javascript-run-out-of-timeout-ids) as each id must be unique
    */
-  TICKER,
+  TIMEOUT,
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop#adding_messages
@@ -23,7 +26,7 @@ export function timedMapFactory<K, V>(
   switch (strategy) {
     case Strategy.TICKER:
       return new TickerMap();
-    case Strategy.TIMEOUTS:
+    case Strategy.TIMEOUT:
       return new TimeoutMap();
     default:
       return new TickerMap();
