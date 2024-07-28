@@ -1,13 +1,13 @@
 {
-  "name": "@eugbyte/timed-map",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@hippotechcode/timed-map",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "dev": "vite",
     "clear": "npx npkill",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "test": "vitest",
     "preview": "vite preview",
     "lint": "eslint .",
