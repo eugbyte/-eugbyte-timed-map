@@ -5,9 +5,14 @@ Like a regular JS `Map`, but with the ability to execute callbacks at the specif
 A possible use case might be to stop displaying the gps position of vehicles on a map should data stop emitting after a specified time.
 
 # Quick start example
-
+Install:
 ```
-import { timedMapFactory, Strategy, type TimedMap } from "@eugbyte/timed-maps";
+npm i @eugbyte/timed-maps
+```
+
+Code demo:
+```
+import { timedMapFactory, type TimedMap } from "@eugbyte/timed-maps";
 
 const cache: TimedMap<string, number> = timedMapFactory();
 cache.set("one", 1);
@@ -40,6 +45,8 @@ cache.dispose();
 There are two strategies for the timed map. `Strategy.TIMEOUT` AND `Strategy.TICKER` (default).
 
 ```
+import { timedMapFactory, Strategy, type TimedMap } from "@eugbyte/timed-maps";
+
 let cache: TimedMap<string, number> = timedMapFactory(Strategy.TIMEOUT);
 cache = timedMapFactory(Strategy.TICKER);
 cache = timedMapFactory(); // defaults to `Strategy.TICKER`
@@ -91,11 +98,11 @@ const infos: Map<string, TimeoutInfo> = cache.getTimeouts();
 ```
 
 # Development
-Test:
+## Test:
 
 `pnpm run test`
 
-# Build
+## Build
 
 `pnpm run build`
 
