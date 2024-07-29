@@ -1,13 +1,21 @@
+import { resolve } from "path";
 import { defineConfig } from "vitest/config";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
   test: {
     globals: true,
   },
   build: {
-    rollupOptions : {
-      // overwrite default .html entry
-      input : '/src/index.ts',
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "timed-map",
     },
-  }
+    rollupOptions: {
+      // overwrite default .html entry
+      input: "/src/index.ts",
+    },
+  },
+  plugins: [dts()],
 });

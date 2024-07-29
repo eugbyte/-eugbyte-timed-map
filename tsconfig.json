@@ -12,12 +12,16 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "outDir": "dist",
+    // "allowImportingTsExtensions": true,
+    // "noEmit": true,
+    // Generate d.ts files
+    "declaration": true,
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
 }
