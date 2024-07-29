@@ -14,5 +14,6 @@ export default defineConfig({
       fileName: "index",
     },
   },
+  // to merge all declarations into one file
   plugins: [dts({ rollupTypes: false })],
 });
