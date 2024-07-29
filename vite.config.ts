@@ -13,10 +13,6 @@ export default defineConfig({
       name: "timed-map",
       fileName: "index",
     },
-    rollupOptions: {
-      // overwrite default .html entry
-      input: "/src/index.ts",
-    },
   },
-  plugins: [dts()],
+  plugins: [dts({ rollupTypes: false })],
 });

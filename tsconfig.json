@@ -11,12 +11,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "outDir": "dist",
-    // "allowImportingTsExtensions": true,
-    // "noEmit": true,
-    // Generate d.ts files
-    "declaration": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
 
+    /* Generate d.ts and js files */
+    // "outDir": "dist",
+    // "declaration": true,
+    
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
