@@ -2,8 +2,6 @@ import { TickerMap } from "./ticker-map";
 import { TimeoutMap } from "./timeout-map";
 import { TimedMap } from "./timed-map.types";
 
-export type Abc = 1;
-
 export enum Strategy {
   /**
    * Cache is expected to be used perpetually, e.g. in a backend server, https://stackoverflow.com/a/53127712/6514532.
