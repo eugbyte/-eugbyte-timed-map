@@ -17,7 +17,7 @@
     /* Generate d.ts and js files */
     // "outDir": "dist",
     // "declaration": true,
-    
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
