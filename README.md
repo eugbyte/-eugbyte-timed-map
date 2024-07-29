@@ -28,6 +28,9 @@ console.log(cache.has("one"));    // true
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 await sleep(6000);
 console.log(cache.has("one")) // false
+
+// remember to call `dispose` once you are done with the cache, since the cache uses `setTimeout` / `setInterval` internally and needs to clear it.
+cache.dispose();
 ```
 
 # More info
