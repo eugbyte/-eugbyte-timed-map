@@ -26,6 +26,8 @@ jobs:
           version: 8
       - name: Install npm modules
         run: pnpm install
+      - name: Test
+        run: pnpm run test
       - name: Publish
         run: npm publish --access=public
         env:
