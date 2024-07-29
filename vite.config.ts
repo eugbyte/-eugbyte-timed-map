@@ -15,5 +15,5 @@ export default defineConfig({
     },
   },
   // to merge all declarations into one file
-  plugins: [dts({ rollupTypes: false })],
+  plugins: [dts({ rollupTypes: true })],
 });
