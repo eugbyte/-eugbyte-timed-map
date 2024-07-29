@@ -86,3 +86,14 @@ Returns a deep copy of all timeout informations.
 ```
 const infos: Map<string, TimeoutInfo> = cache.getTimeouts();
 ```
+
+# Development
+Test:
+
+`pnpm run test`
+
+# Build
+
+`pnpm run build`
+
+This project use [Vite library mode](https://vitejs.dev/guide/build#library-mode) with [vite-plugin-dts](https://github.com/qmhc/vite-plugin-dts) to bundle the `.ts` files to generate `.js` and `d.ts` files.
