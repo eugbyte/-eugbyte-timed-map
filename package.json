@@ -1,7 +1,7 @@
 {
   "name": "@eugbyte/timed-map",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -14,6 +14,10 @@
       "require": "./dist/index.umd.cjs"
     }
   },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/eugbyte/timed-map"
+},
   "scripts": {
     "clear": "npx npkill",
     "build": "rm -rf dist && tsc && vite build",
